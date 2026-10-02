@@ -22,3 +22,9 @@ def families(password):
         if family not in found:
             found.append(family)
     return found
+
+def characters_pool_size(password):
+    total = 0
+    for family in families(password):
+        total += FAMILY_SIZE[family]
+    return total
