@@ -23,7 +23,7 @@ def main(argv=None):
     if password is None:
         return 2
  
-    print(len(password))
+    print(len(pas))
     return 0
 
 if __name__ == "__main__":
