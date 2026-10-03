@@ -1,4 +1,5 @@
 import string
+import math
 
 FAMILY_SIZE = {
     "lower": 26,  # from a to z
@@ -28,3 +29,8 @@ def characters_pool_size(password):
     for family in families(password):
         total += FAMILY_SIZE[family]
     return total
+
+def naive_entropy(password):
+    if len(password) == 0:
+        return 0
+    return len(password) * math.log2(characters_pool_size(password))
