@@ -26,8 +26,11 @@ def main(argv=None):
         return 2
  
     print(len(password))
+    entropy = naive_entropy(password)
 
-    print("Entropy = " + str(naive_entropy(password)))
+    print("Entropy = " + str(entropy))
+    if entropy < 75:
+        print("You should try a password with more entropy, less than 75 is not secure enought")
 
     return 0
 
