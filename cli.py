@@ -2,6 +2,8 @@ import argparse
 import getpass
 import sys
 
+from entropy import characters_pool_size, families, naive_entropy
+
 def ask_password():
     try:
         password = getpass.getpass("Password: ")
@@ -24,6 +26,9 @@ def main(argv=None):
         return 2
  
     print(len(password))
+
+    print("Entropy = " + str(naive_entropy(password)))
+
     return 0
 
 if __name__ == "__main__":
